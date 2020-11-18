@@ -1,0 +1,15 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "useTabs": false,
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": [
+        "*.json",
+        "*.md",
+        "*.yaml"
+      ]
+    }
+  ]
+}

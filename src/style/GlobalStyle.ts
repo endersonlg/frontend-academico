@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import 'antd/dist/antd.css';
 
 export default createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
    * {
 		margin: 0;
 		padding: 0;
@@ -10,7 +12,7 @@ export default createGlobalStyle`
 	*, button, input {
 		border: 0;
 		outline: 0;
-		font-family: 'Roboto', sans-serif;
+		/* font-family: 'Roboto', sans-serif; */
 	}
 
 	#root, html, body {

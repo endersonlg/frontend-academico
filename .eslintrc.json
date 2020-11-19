@@ -26,7 +26,6 @@
         "prefer-template":"warn",
         "object-curly-spacing": ["warn", "always"],
         "no-console":"warn",
-        "max-len": ["error", { "code": 80 }]
-
+        "no-unused-vars": "warn"
     }
 }

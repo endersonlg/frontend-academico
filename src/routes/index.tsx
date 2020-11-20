@@ -8,8 +8,9 @@ const Routes = () => {
     return (
         <Container>
             <Switch>
-                <Route path="/table-users" exact component={Users} />
-                <Route path="/graphic/pizza" exact component={Pizza} />
+                <Route path="/table-users" component={Users} />
+                <Route path="/graphic/pizza" component={Pizza} />
+                <Route path="*" component={Pizza} />
             </Switch>
         </Container>
     );

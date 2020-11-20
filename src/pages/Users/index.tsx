@@ -67,8 +67,6 @@ const Users: React.FC = () => {
             columns={columns}
         />
     );
-
-    return <h1>Users</h1>;
 };
 
 export default Users;

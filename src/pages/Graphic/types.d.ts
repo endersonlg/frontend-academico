@@ -1,42 +1,42 @@
 export type StatisticAge = {
-    age: Number;
-    quantity: Number;
+    age: number;
+    quantity: number;
 };
 
 export type StatisticCity = {
-    city: String;
-    quantity: Number;
+    city: string;
+    quantity: number;
 };
 
 export type StatisticEtnia = {
-    etnia: String;
-    quantity: Number;
+    etnia: string;
+    quantity: number;
 };
 export type StatisticFamilyIncome = {
-    familyIncome: String;
-    quantity: Number;
+    familyIncome: string;
+    quantity: number;
 };
 v;
 export type StatisticSchool = {
-    school: Number;
-    quantity: Number;
+    school: number;
+    quantity: number;
 };
 export type StatisticSexo = {
-    sexo: String;
-    quantity: Number;
+    sexo: string;
+    quantity: number;
 };
 export type StatisticSituationRegistration = {
-    situationRegistration: String;
-    quantity: Number;
+    situationRegistration: string;
+    quantity: number;
 };
 export type StatisticState = {
-    state: String;
-    quantity: Number;
+    state: string;
+    quantity: number;
 };
 export type StatisticStateCity = {
-    city: String;
-    state: String;
-    quantity: Number;
+    city: string;
+    state: string;
+    quantity: number;
 };
 
 export type GetStatisticsAluno = {

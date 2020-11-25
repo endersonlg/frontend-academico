@@ -29,12 +29,10 @@ const TreeMapCity: React.FC = () => {
 
     return (
         <>
-            <h2>Cidades dos Alunos</h2>
             <Table
                 columns={columns}
                 dataSource={data?.getStatisticsAluno.statisticCity}
             ></Table>
-            <h3>Gráfico mapa de Árvores</h3>
             <TreeMap
                 data={data?.getStatisticsAluno.statisticCity?.map((city) => ({
                     name: city.city.toString(),

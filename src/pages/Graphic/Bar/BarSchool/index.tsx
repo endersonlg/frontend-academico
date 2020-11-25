@@ -1,8 +1,9 @@
 import { useQuery } from '@apollo/client';
+import Table, { ColumnsType } from 'antd/lib/table';
 import React from 'react';
 import BarChart from '../../../../components/BarChart';
 import { getStatic } from '../../schema';
-import { GetStatisticsAluno } from '../../types';
+import { GetStatisticsAluno, StatisticSchool } from '../../types';
 
 type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
@@ -14,11 +15,23 @@ const BarSchool: React.FC = () => {
     if (loading) {
         return <h1>Carregando...</h1>;
     }
+    const columns: ColumnsType<StatisticSchool> = [
+        {
+            title: 'Escola',
+            dataIndex: 'school',
+        },
+        {
+            title: 'Quantidade',
+            dataIndex: 'quantity',
+        },
+    ];
 
     return (
         <>
-            <h2>Gráfico de Bar</h2>
-            <h3>Tipo de escola que estudarão</h3>
+            <Table
+                columns={columns}
+                dataSource={data?.getStatisticsAluno.statisticSchool}
+            ></Table>
             <BarChart
                 data={data?.getStatisticsAluno.statisticSchool.map(
                     (school) => ({

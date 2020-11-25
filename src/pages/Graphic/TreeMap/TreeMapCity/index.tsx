@@ -1,8 +1,10 @@
 import { useQuery } from '@apollo/client';
+import { Table } from 'antd';
+import { ColumnsType } from 'antd/lib/table';
 import React from 'react';
 import TreeMap from '../../../../components/TreeMap';
 import { getStatic } from '../../schema';
-import { GetStatisticsAluno } from '../../types';
+import { GetStatisticsAluno, StatisticCity } from '../../types';
 
 type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
@@ -14,11 +16,25 @@ const TreeMapCity: React.FC = () => {
     if (loading) {
         return <h1>Carregando...</h1>;
     }
+    const columns: ColumnsType<StatisticCity> = [
+        {
+            title: 'Cidade',
+            dataIndex: 'city',
+        },
+        {
+            title: 'Quantidade',
+            dataIndex: 'quantity',
+        },
+    ];
 
     return (
         <>
-            <h2>Gráfico mapa de Árvores</h2>
-            <h3>Cidades dos Alunos</h3>
+            <h2>Cidades dos Alunos</h2>
+            <Table
+                columns={columns}
+                dataSource={data?.getStatisticsAluno.statisticCity}
+            ></Table>
+            <h3>Gráfico mapa de Árvores</h3>
             <TreeMap
                 data={data?.getStatisticsAluno.statisticCity?.map((city) => ({
                     name: city.city.toString(),

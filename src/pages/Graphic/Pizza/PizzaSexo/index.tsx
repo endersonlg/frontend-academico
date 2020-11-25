@@ -1,8 +1,9 @@
 import { useQuery } from '@apollo/client';
+import Table, { ColumnsType } from 'antd/lib/table';
 import React from 'react';
 import PizzaChart from '../../../../components/PizzaChart';
 import { getStatic } from '../../schema';
-import { GetStatisticsAluno } from '../../types';
+import { GetStatisticsAluno, StatisticSexo } from '../../types';
 
 type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
@@ -14,11 +15,23 @@ const PizzaSexo: React.FC = () => {
     if (loading) {
         return <h1>Carregando...</h1>;
     }
+    const columns: ColumnsType<StatisticSexo> = [
+        {
+            title: 'Sexo',
+            dataIndex: 'sexo',
+        },
+        {
+            title: 'Quantidade',
+            dataIndex: 'quantity',
+        },
+    ];
 
     return (
         <>
-            <h2>Gráfico de Pizza</h2>
-            <h3>Sexo dos Alunos</h3>
+            <Table
+                columns={columns}
+                dataSource={data?.getStatisticsAluno.statisticSexo}
+            ></Table>
             <PizzaChart
                 data={data?.getStatisticsAluno.statisticSexo.map((sex) => ({
                     name: sex.sexo,

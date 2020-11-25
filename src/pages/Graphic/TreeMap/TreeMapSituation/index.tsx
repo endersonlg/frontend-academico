@@ -1,8 +1,13 @@
 import { useQuery } from '@apollo/client';
+import { Table } from 'antd';
+import { ColumnsType } from 'antd/lib/table';
 import React from 'react';
 import TreeMap from '../../../../components/TreeMap';
 import { getStatic } from '../../schema';
-import { GetStatisticsAluno } from '../../types';
+import {
+    GetStatisticsAluno,
+    StatisticSituationRegistration,
+} from '../../types';
 
 type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
@@ -14,11 +19,25 @@ const TreeMapSituation: React.FC = () => {
     if (loading) {
         return <h1>Carregando...</h1>;
     }
+    const columns: ColumnsType<StatisticSituationRegistration> = [
+        {
+            title: 'Situação',
+            dataIndex: 'situationRegistration',
+        },
+        {
+            title: 'Quantidade',
+            dataIndex: 'quantity',
+        },
+    ];
 
     return (
         <>
-            <h2>Gráfico mapa de Árvores</h2>
-            <h3>Situação dos Alunos</h3>
+            <Table
+                columns={columns}
+                dataSource={
+                    data?.getStatisticsAluno.statisticSituationRegistration
+                }
+            ></Table>
             <TreeMap
                 data={data?.getStatisticsAluno.statisticSituationRegistration.map(
                     (situation) => ({

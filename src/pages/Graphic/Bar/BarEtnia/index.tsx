@@ -1,8 +1,9 @@
 import { useQuery } from '@apollo/client';
+import Table, { ColumnsType } from 'antd/lib/table';
 import React from 'react';
 import BarChart from '../../../../components/BarChart';
 import { getStatic } from '../../schema';
-import { GetStatisticsAluno } from '../../types';
+import { GetStatisticsAluno, StatisticEtnia } from '../../types';
 
 type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
@@ -15,10 +16,23 @@ const BarEtnia: React.FC = () => {
         return <h1>Carregando...</h1>;
     }
 
+    const columns: ColumnsType<StatisticEtnia> = [
+        {
+            title: 'Etnia',
+            dataIndex: 'etnia',
+        },
+        {
+            title: 'Quantidade',
+            dataIndex: 'quantity',
+        },
+    ];
+
     return (
         <>
-            <h2>Gráfico de Barra</h2>
-            <h3>Etnia de Alunos</h3>
+            <Table
+                columns={columns}
+                dataSource={data?.getStatisticsAluno.statisticEtnia}
+            ></Table>
             <BarChart
                 data={data?.getStatisticsAluno.statisticEtnia.map((etnia) => ({
                     name: etnia.etnia,

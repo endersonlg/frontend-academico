@@ -57,10 +57,44 @@ const SideBar: React.FC = () => {
                             </Link>
                         </Menu.Item>
                     </Menu.SubMenu>
+                    <Menu.SubMenu
+                        key="14"
+                        title="Barras"
+                        icon={<BarChartOutlined />}
+                    >
+                        <Menu.Item key="4" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/age">Idade</Link>
+                        </Menu.Item>
+                        <Menu.Item key="5" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/etnia">Etnia</Link>
+                        </Menu.Item>
+                        <Menu.Item key="6" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/school">Escola</Link>
+                        </Menu.Item>
+                        <Menu.Item key="7" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/familyIncome">
+                                Renda Familiar
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="8" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/sexo">Sexo</Link>
+                        </Menu.Item>
+                        <Menu.Item key="9" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/situation">Situação</Link>
+                        </Menu.Item>
+                        <Menu.Item key="10" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/state">Estado</Link>
+                        </Menu.Item>
+                        <Menu.Item key="11" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/city">Cidade</Link>
+                        </Menu.Item>
+                        <Menu.Item key="12" icon={<BarChartOutlined />}>
+                            <Link to="/graphic/bar/stateCity">
+                                Estado - Cidade
+                            </Link>
+                        </Menu.Item>
+                    </Menu.SubMenu>
                 </Menu.SubMenu>
-                <Menu.Item key="13" icon={<BarChartOutlined />}>
-                    <Link to="/graphic/bar">Barras</Link>
-                </Menu.Item>
             </Menu>
         </Layout.Sider>
     );

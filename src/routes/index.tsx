@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Container from '../components/Container';
-import Bar from '../pages/Graphic/Bar';
 import PizzaAge from '../pages/Graphic/Pizza/PizzaAge';
 import PizzaCity from '../pages/Graphic/Pizza/PizzaCity';
 import PizzaEtnia from '../pages/Graphic/Pizza/PizzaEtnia';
@@ -37,8 +36,19 @@ const Routes = () => {
                     path="/graphic/pizza/stateCity"
                     component={PizzaStateCity}
                 />
-                <Route path="/graphic/tree-map/age" component={TreeMapAge} />
-                <Route path="/graphic/bar" component={Bar} />
+
+                <Route path="/graphic/bar/age" component={BarAge} />
+                <Route path="/graphic/bar/city" component={BarCity} />
+                <Route path="/graphic/bar/etnia" component={BarEtnia} />
+                <Route
+                    path="/graphic/bar/familyIncome"
+                    component={BarFamilyIncome}
+                />
+                <Route path="/graphic/bar/school" component={BarSchool} />
+                <Route path="/graphic/bar/sexo" component={BarSexo} />
+                <Route path="/graphic/bar/situation" component={BarSituation} />
+                <Route path="/graphic/bar/state" component={BarState} />
+                <Route path="/graphic/bar/stateCity" component={BarStateCity} />
             </Switch>
         </Container>
     );

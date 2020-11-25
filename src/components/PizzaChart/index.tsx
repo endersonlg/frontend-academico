@@ -28,6 +28,9 @@ const renderCustomizedLabel = ({
     innerRadius,
     outerRadius,
     percent,
+    fill,
+    name,
+    value,
 }: PieLabelRenderProps): JSX.Element | null => {
     if (
         innerRadius !== undefined &&
@@ -37,25 +40,49 @@ const renderCustomizedLabel = ({
         midAngle !== undefined &&
         percent !== undefined
     ) {
-        const radius =
-            parseFloat(innerRadius.toString()) +
-            (parseFloat(outerRadius.toString()) -
-                parseFloat(innerRadius.toString()) * 0.5);
-        const x =
-            parseFloat(cx.toString()) + radius * Math.cos(-midAngle * RADIAN);
-        const y =
-            parseFloat(cy.toString()) + radius * Math.sin(-midAngle * RADIAN);
-
+        const sin = Math.sin(-RADIAN * midAngle);
+        const cos = Math.cos(-RADIAN * midAngle);
+        const sx =
+            parseInt(cx.toString()) +
+            (parseInt(outerRadius.toString()) + 10) * cos;
+        const sy =
+            parseInt(cy.toString()) +
+            (parseInt(outerRadius.toString()) + 10) * sin;
+        const mx =
+            parseInt(cx.toString()) +
+            (parseInt(outerRadius.toString()) + 30) * cos;
+        const my =
+            parseInt(cy.toString()) +
+            (parseInt(outerRadius.toString()) + 30) * sin;
+        const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+        const ey = my;
+        const textAnchor = cos >= 0 ? 'start' : 'end';
         return (
-            <text
-                x={x}
-                y={y}
-                fill="black"
-                textAnchor={'end'}
-                dominantBaseline="central"
-            >
-                {`${(percent * 100).toFixed(0)}%`}
-            </text>
+            <g>
+                <path
+                    d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
+                    stroke={fill}
+                    fill="none"
+                />
+                <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+                <text
+                    x={ex + (cos >= 0 ? 1 : -1) * 12}
+                    y={ey}
+                    textAnchor={textAnchor}
+                    fill="#333"
+                >
+                    {name}
+                </text>
+                <text
+                    x={ex + (cos >= 0 ? 1 : -1) * 12}
+                    y={ey}
+                    dy={18}
+                    textAnchor={textAnchor}
+                    fill="#999"
+                >
+                    {`(${value} - ${(percent * 100).toFixed(2)}%)`}
+                </text>
+            </g>
         );
     }
     return null;

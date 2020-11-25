@@ -8,7 +8,7 @@ type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
 };
 
-const TreeMapSateCity: React.FC = () => {
+const TreeMapFamily: React.FC = () => {
     const { data, loading } = useQuery<QueryResult>(getStatic);
 
     if (loading) {
@@ -18,12 +18,12 @@ const TreeMapSateCity: React.FC = () => {
     return (
         <>
             <h2>Gráfico mapa de Árvores</h2>
-            <h3>Estado e Cidade dos Alunos</h3>
+            <h3>Renda Familiar</h3>
             <TreeMap
-                data={data?.getStatisticsAluno.statisticStateCity.map(
-                    (stateCity) => ({
-                        name: `${stateCity.state} - ${stateCity.city}`,
-                        value: stateCity.quantity,
+                data={data?.getStatisticsAluno.statisticFamilyIncome?.map(
+                    (family) => ({
+                        name: family.familyIncome,
+                        value: family.quantity,
                     }),
                 )}
             />
@@ -31,4 +31,4 @@ const TreeMapSateCity: React.FC = () => {
     );
 };
 
-export default TreeMapSateCity;
+export default TreeMapFamily;

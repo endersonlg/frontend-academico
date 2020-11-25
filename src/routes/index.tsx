@@ -1,6 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Container from '../components/Container';
+import BarAge from '../pages/Graphic/Bar/BarAge';
+import BarCity from '../pages/Graphic/Bar/BarCity';
+import BarEtnia from '../pages/Graphic/Bar/BarEtnia';
+import BarFamilyIncome from '../pages/Graphic/Bar/BarFamilyIncome';
+import BarSchool from '../pages/Graphic/Bar/BarSchool';
+import BarSexo from '../pages/Graphic/Bar/BarSexo';
+import BarSituation from '../pages/Graphic/Bar/BarSituation';
+import BarState from '../pages/Graphic/Bar/BarState';
+import BarStateCity from '../pages/Graphic/Bar/BarStateCity';
 import PizzaAge from '../pages/Graphic/Pizza/PizzaAge';
 import PizzaCity from '../pages/Graphic/Pizza/PizzaCity';
 import PizzaEtnia from '../pages/Graphic/Pizza/PizzaEtnia';
@@ -11,6 +20,14 @@ import PizzaSituation from '../pages/Graphic/Pizza/PizzaSituation';
 import PizzaState from '../pages/Graphic/Pizza/PizzaState';
 import PizzaStateCity from '../pages/Graphic/Pizza/PizzaStateCity';
 import TreeMapAge from '../pages/Graphic/TreeMap/TreeMapAge';
+import TreeMapCity from '../pages/Graphic/TreeMap/TreeMapCity';
+import TreeMapEtnia from '../pages/Graphic/TreeMap/TreeMapEtnia';
+import TreeMapFamilyIncome from '../pages/Graphic/TreeMap/TreeMapFamily';
+import TreeMapSchool from '../pages/Graphic/TreeMap/TreeMapSchool';
+import TreeMapSexo from '../pages/Graphic/TreeMap/TreeMapSexo';
+import TreeMapSituation from '../pages/Graphic/TreeMap/TreeMapSituation';
+import TreeMapState from '../pages/Graphic/TreeMap/TreeMapState';
+import TreeMapStateCity from '../pages/Graphic/TreeMap/TreeMapStateCity';
 import Users from '../pages/Users';
 
 const Routes = () => {
@@ -49,6 +66,34 @@ const Routes = () => {
                 <Route path="/graphic/bar/situation" component={BarSituation} />
                 <Route path="/graphic/bar/state" component={BarState} />
                 <Route path="/graphic/bar/stateCity" component={BarStateCity} />
+
+                <Route path="/graphic/tree-map/age" component={TreeMapAge} />
+                <Route path="/graphic/tree-map/city" component={TreeMapCity} />
+                <Route
+                    path="/graphic/tree-map/etnia"
+                    component={TreeMapEtnia}
+                />
+                <Route
+                    path="/graphic/tree-map/familyIncome"
+                    component={TreeMapFamilyIncome}
+                />
+                <Route
+                    path="/graphic/tree-map/school"
+                    component={TreeMapSchool}
+                />
+                <Route path="/graphic/tree-map/sexo" component={TreeMapSexo} />
+                <Route
+                    path="/graphic/tree-map/situation"
+                    component={TreeMapSituation}
+                />
+                <Route
+                    path="/graphic/tree-map/state"
+                    component={TreeMapState}
+                />
+                <Route
+                    path="/graphic/tree-map/stateCity"
+                    component={TreeMapStateCity}
+                />
             </Switch>
         </Container>
     );

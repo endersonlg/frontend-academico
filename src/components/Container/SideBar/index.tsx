@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const SideBar: React.FC = () => {
     return (
         <Layout.Sider>
-            <Menu theme="dark" mode="vertical-left" defaultSelectedKeys={['0']}>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['0']}>
                 <Menu.Item key="1" icon={<UserOutlined />}>
                     <Link to="/table-users">Tabela</Link>
                 </Menu.Item>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Container from '../components/Container';
-import Bar from '../pages/Graphic/Bar';
 import PizzaAge from '../pages/Graphic/Pizza/PizzaAge';
 import PizzaCity from '../pages/Graphic/Pizza/PizzaCity';
 import PizzaEtnia from '../pages/Graphic/Pizza/PizzaEtnia';
@@ -11,6 +10,16 @@ import PizzaSexo from '../pages/Graphic/Pizza/PizzaSexo';
 import PizzaSituation from '../pages/Graphic/Pizza/PizzaSituation';
 import PizzaState from '../pages/Graphic/Pizza/PizzaState';
 import PizzaStateCity from '../pages/Graphic/Pizza/PizzaStateCity';
+
+import BarAge from '../pages/Graphic/Bar/BarAge';
+import BarCity from '../pages/Graphic/Bar/BarCity';
+import BarEtnia from '../pages/Graphic/Bar/BarEtnia';
+import BarFamilyIncome from '../pages/Graphic/Bar/BarFamilyIncome';
+import BarSchool from '../pages/Graphic/Bar/BarSchool';
+import BarSexo from '../pages/Graphic/Bar/BarSexo';
+import BarSituation from '../pages/Graphic/Bar/BarSituation';
+import BarState from '../pages/Graphic/Bar/BarState';
+import BarStateCity from '../pages/Graphic/Bar/BarStateCity';
 import Users from '../pages/Users';
 
 const Routes = () => {
@@ -36,7 +45,19 @@ const Routes = () => {
                     path="/graphic/pizza/stateCity"
                     component={PizzaStateCity}
                 />
-                <Route path="/graphic/bar" component={Bar} />
+
+                <Route path="/graphic/bar/age" component={BarAge} />
+                <Route path="/graphic/bar/city" component={BarCity} />
+                <Route path="/graphic/bar/etnia" component={BarEtnia} />
+                <Route
+                    path="/graphic/bar/familyIncome"
+                    component={BarFamilyIncome}
+                />
+                <Route path="/graphic/bar/school" component={BarSchool} />
+                <Route path="/graphic/bar/sexo" component={BarSexo} />
+                <Route path="/graphic/bar/situation" component={BarSituation} />
+                <Route path="/graphic/bar/state" component={BarState} />
+                <Route path="/graphic/bar/stateCity" component={BarStateCity} />
             </Switch>
         </Container>
     );

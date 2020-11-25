@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
-import { getStatic } from './schema';
+import { getStatic } from '../schema';
 import { GetStatisticsAluno } from '../types';
 import PizzaChart from '../../../components/PizzaChart';
 

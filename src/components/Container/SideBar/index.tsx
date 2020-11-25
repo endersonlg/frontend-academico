@@ -4,6 +4,7 @@ import {
     AreaChartOutlined,
     PieChartOutlined,
     UserOutlined,
+    BarChartOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
@@ -21,6 +22,9 @@ const SideBar: React.FC = () => {
                 >
                     <Menu.Item key="3" icon={<PieChartOutlined />}>
                         <Link to="/graphic/pizza">Pizza</Link>
+                    </Menu.Item>
+                    <Menu.Item key="4" icon={<BarChartOutlined />}>
+                        <Link to="/graphic/bar">Barras</Link>
                     </Menu.Item>
                 </Menu.SubMenu>
             </Menu>

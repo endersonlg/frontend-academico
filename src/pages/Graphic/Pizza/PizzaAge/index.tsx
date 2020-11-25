@@ -1,14 +1,14 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import PizzaChart from '../../../../components/PizzaChart';
+import { getStatic } from '../../schema';
 import { GetStatisticsAluno } from '../../types';
-import { getStatic } from '../schema';
 
 type QueryResult = {
     getStatisticsAluno: GetStatisticsAluno;
 };
 
-const PizzaAluno: React.FC = () => {
+const PizzaAge: React.FC = () => {
     const { data, loading } = useQuery<QueryResult>(getStatic);
 
     if (loading) {
@@ -25,14 +25,8 @@ const PizzaAluno: React.FC = () => {
                     value: age.quantity,
                 }))}
             />
-            <PizzaChart
-                data={data?.getStatisticsAluno.statisticEtnia.map((age) => ({
-                    name: age.etnia,
-                    value: age.quantity,
-                }))}
-            />
         </>
     );
 };
 
-export default PizzaAluno;
+export default PizzaAge;

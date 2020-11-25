@@ -18,7 +18,7 @@ export type StatisticFamilyIncome = {
 };
 v;
 export type StatisticSchool = {
-    school: number;
+    school: string;
     quantity: number;
 };
 export type StatisticSexo = {

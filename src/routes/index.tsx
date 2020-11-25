@@ -11,6 +11,7 @@ import PizzaSexo from '../pages/Graphic/Pizza/PizzaSexo';
 import PizzaSituation from '../pages/Graphic/Pizza/PizzaSituation';
 import PizzaState from '../pages/Graphic/Pizza/PizzaState';
 import PizzaStateCity from '../pages/Graphic/Pizza/PizzaStateCity';
+import TreeMapAge from '../pages/Graphic/TreeMap/TreeMapAge';
 import Users from '../pages/Users';
 
 const Routes = () => {
@@ -36,6 +37,7 @@ const Routes = () => {
                     path="/graphic/pizza/stateCity"
                     component={PizzaStateCity}
                 />
+                <Route path="/graphic/tree-map/age" component={TreeMapAge} />
                 <Route path="/graphic/bar" component={Bar} />
             </Switch>
         </Container>
